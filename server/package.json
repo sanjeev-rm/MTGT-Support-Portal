@@ -1,0 +1,34 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "ts-node src/app.ts",
+    "build-and-run": "npm run build && npm run start",
+    "export": "tsx src/exportComplaints.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/cors": "^5.0.0",
+    "koa": "^3.0.0",
+    "koa-bodyparser": "^4.4.1",
+    "koa-router": "^13.0.1",
+    "pg": "^8.16.1",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.24",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.15.0",
+    "@types/koa__cors": "^5.0.0",
+    "@types/koa-bodyparser": "^4.3.12",
+    "@types/koa-cors": "^0.0.6",
+    "@types/koa-router": "^7.4.8",
+    "ts-node": "^10.9.2"
+  }
+}
