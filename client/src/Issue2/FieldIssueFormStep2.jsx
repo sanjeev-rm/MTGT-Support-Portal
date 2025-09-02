@@ -26,6 +26,7 @@ const FieldIssueFormStep2 = () => {
     const reason = selected;
     const today = new Date().toISOString().split('T')[0]; 
     const date = today;
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
     if (!user_code || !store_code || !reason) {
       alert('Missing info. Please try again.');
@@ -33,7 +34,7 @@ const FieldIssueFormStep2 = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:3000/api/complaints', {
+      const res = await fetch(`${apiUrl}/api/complaints`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ user_code, store_code, type, reason, date })

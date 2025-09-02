@@ -23,11 +23,13 @@ export const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
 
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/api/users/${userCode}`);
+      const res = await fetch(`${apiUrl}/api/users/${userCode}`);
 
       if (!res.ok) {
         alert("User not found!");

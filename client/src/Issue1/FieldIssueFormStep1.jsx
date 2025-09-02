@@ -15,9 +15,10 @@ const FieldIssueFormStep1 = () => {
     const userCode = sessionStorage.getItem('userCode');
     console.log(userCode);
     if (storedChannel) setChannel(storedChannel);
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
     if (userCode) {
-      fetch(`http://localhost:3000/api/users/${userCode}/stores`)
+      fetch(`${apiUrl}/api/users/${userCode}/stores`)
         .then(res => res.json())
         .then(data => {
           setStores(data);
